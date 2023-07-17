@@ -11,13 +11,13 @@
 </head>
 
 <body style="overflow-y: scroll;">
-  <div class="dark" style="display: none;"></div>
-  <nav class="nav-menu" style="transform: translateX(-100%);">
+  <div class="dark"></div>
+  <nav class="nav-menu">
     <div class="head">
       <img src="images/icons/menu.svg" alt="Menu" class="menu-icon">
       <a href="index.html"><img src="images/youtube_logo.png" alt="Logo" class="main-logo"></a>
     </div>
-    <div class="main" style="overflow: hidden;">
+    <div class="main">
       <div class="primary">
         <div class="item">
           <a href="index.html">
@@ -97,7 +97,7 @@
           </a>
         </div>
       </div>
-      <div class="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam fugiat quae ea, deserunt nam repudiandae cupiditate distinctio beatae ipsa et?<br><br>All content within this project is not serious and was created for educational purposes only</div>
+      <div class="lorem">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium maiores voluptas dolorem excepturi quaerat adipisci quasi labore ipsa tempore ut. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam fugiat quae ea, deserunt nam repudiandae cupiditate distinctio beatae ipsa et?<br><br>All content within this project is not serious and was created for educational purposes only</div>
     </div>
   </nav>
   <header>
@@ -166,7 +166,7 @@
             </button>
           </div>
         </div>
-        <div class="description" style="cursor: pointer; background-color: #393939;">
+        <div class="description" style="background-color: #393939">
           <div class="date">159 979 просмотров&nbsp;&nbsp;9 апр. 2022 г.</div>
           <span style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ipsa maiores a labore dolores voluptate, deserunt culpa nobis magnam enim non qui quo iure laborum exercitationem laboriosam consequuntur eum sunt. Harum quod, quisquam impedit beatae itaque dolor minima error, amet unde repellendus placeat! Sunt non quidem, quia ipsam suscipit exercitationem!<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ipsa maiores a labore dolores voluptate, deserunt culpa nobis magnam enim non qui quo iure laborum exercitationem laboriosam consequuntur eum sunt. Harum quod, quisquam impedit beatae itaque dolor minima error, amet unde repellendus placeat! Sunt non quidem, quia ipsam suscipit exercitationem!
           <br><span class="collapse">Свернуть</span>
@@ -176,7 +176,9 @@
           <div class="count">n комментариев</div>
           <form class="enter" action="POST">
             <img src="images/elon_musk.jpg" alt="Profile Image" class="account-icon">
-            <input placeholder="Введите комментарий">
+            <input type="text" placeholder="Введите комментарий">
+            <button class="cancel" type="reset">Отмена</button>
+            <button class="submit" type="submit" disabled>Отправить</button>
           </form>
         </div>
       </div>
