@@ -42,46 +42,46 @@ let dark = document.querySelector('.dark');
 let body = document.querySelector('body');
 
 menuIcons[0].addEventListener('mousedown', (evt) => {
-    if(menu.getAttribute('style') === 'transform: translateX(0%);') {
-        menu.setAttribute('style', 'transform: translateX(-100%);');
-        dark.setAttribute('style', 'display: none;');
-        body.setAttribute('style', 'overflow-y: scroll;');
+    if(menu.style.transform == 'translateX(0%)') {
+        menu.style.transform = 'translateX(-100%)';
+        dark.style.display = 'none';
+        body.style.overflowY = 'scroll';
     }
     else {
-        menu.setAttribute('style', 'transform: translateX(0%)');
-        dark.setAttribute('style', 'display: block;');
-        body.setAttribute('style', 'overflow-y: hidden;');
+        menu.style.transform = 'translateX(0%)';
+        dark.style.display = 'block';
+        body.style.overflowY = 'hidden';
     }
 });
 
 menuIcons[1].addEventListener('mousedown', (evt) => {
-    if(menu.getAttribute('style') === 'transform: translateX(0%);') {
-        menu.setAttribute('style', 'transform: translateX(-100%);');
-        dark.setAttribute('style', 'display: none;');
-        body.setAttribute('style', 'overflow-y: scroll;');
+    if(menu.style.transform == 'translateX(0%)') {
+        menu.style.transform = 'translateX(-100%)';
+        dark.style.display = 'none';
+        body.style.overflowY = 'scroll';
     }
     else {
-        menu.setAttribute('style', 'transform: translateX(0%);');
-        dark.setAttribute('style', 'display: block;');
-        body.setAttribute('style', 'overflow-y: hidden;');
+        menu.style.transform = 'translateX(0%)';
+        dark.style.display = 'block';
+        body.style.overflowY = 'hidden';
     }
 });
 
 dark.addEventListener('mousedown', (evt) => {
-    if(menu.getAttribute('style') === 'transform: translateX(0%);') {
-        menu.setAttribute('style', 'transform: translateX(-100%);');
-        dark.setAttribute('style', 'display: none;');
-        body.setAttribute('style', 'overflow-y: scroll;');
+    if(menu.style.transform == 'translateX(0%)') {
+        menu.style.transform = 'translateX(-100%)';
+        dark.style.display = 'none';
+        body.style.overflowY = 'scroll';
     }
 });
 
 let main = menu.querySelector('.main');
 
 main.addEventListener('mouseover', (evt) => {
-    main.setAttribute('style', 'overflow: auto;');
+    main.style.overflow = 'auto';
 })
 main.addEventListener('mouseout', (evt) => {
-    main.setAttribute('style', 'overflow: hidden;');
+    main.style.overflow = 'hidden';
 })
 
 let desc = document.querySelector('.description');
@@ -103,19 +103,43 @@ collapse.addEventListener('click', (evt) => {
 
 desc.addEventListener('mouseover', (evt) => {
     if(descOpen) {
-        desc.setAttribute('style', 'background-color: #393939;');
+        desc.style.cursor = 'auto'; 
+        desc.style.backgroundColor = '#393939';
     }
     else {
-        desc.setAttribute('style', 'cursor: pointer; background-color: #5e5e5e;');
+        desc.style.cursor = 'pointer';
+        desc.style.backgroundColor = '#5e5e5e';
     }
 });
 
 desc.addEventListener('mouseout', (evt) => {
     if(!descOpen) {
-        desc.setAttribute('style', 'background-color: #393939;');
+        desc.style.backgroundColor = '#393939';
     }
 });
 
 let commentsCount = 1024;
 let commentsCountEl = document.querySelector('.comments .count');
 commentsCountEl.textContent = commentsCount + " комментариев";
+
+let commentInput = document.querySelector('.enter input');
+
+commentInput.addEventListener('focus', (evt) => {
+    commentInput.style.borderBottom = '2px solid #00bbff';
+});
+commentInput.addEventListener('focusout', (evt) => {
+    commentInput.style.borderBottom = '2px solid #5e5e5e';
+});
+commentInput.addEventListener('input', (evt) => {
+    console.log(evt.target.value);
+    if(evt.target.value) {
+        document.querySelector('.enter .submit').disabled = false;
+    }
+    else {
+        document.querySelector('.enter .submit').disabled = true;
+    }
+});
+
+document.querySelector('.enter .cancel').addEventListener('click', (evt) => {
+    document.querySelector('.enter .submit').disabled = true;
+});
