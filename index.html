@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>YouTube Clone</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="images/favicon.ico" type="image/icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+</head>
+
+<body style="overflow-y: scroll;">
+  <div class="dark" style="display: none;"></div>
+  <nav class="nav-menu" style="transform: translateX(-100%);">
+    <div class="head">
+      <img src="images/icons/menu.svg" alt="Menu" class="menu-icon">
+      <a href="index.html"><img src="images/youtube_logo.png" alt="Logo" class="main-logo"></a>
+    </div>
+    <div class="main" style="overflow: hidden;">
+      <div class="primary">
+        <div class="item">
+          <a href="index.html">
+            <img src="images/icons/home.svg" alt="Home" class="icon">
+            <span>Главная</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/icons/subscriptions.svg" alt="Subscriptions" class="icon">
+            <span>Подписки</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/icons/history.svg" alt="History" class="icon">
+            <span>История</span>
+          </a>
+        </div>
+      </div>
+      <div class="subscriptions">
+        <span>Подписки</span>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/elon_musk.jpg" alt="Subscription" class="icon">
+            <span>100% Не Фейк Илон Маск</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/dove.jpg" alt="Subscription" class="icon">
+            <span>Слежка за голубями</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/youtube_icon.png" alt="Subscription" class="icon">
+            <span>YouTube</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/apple_office.jpg" alt="Subscription" class="icon">
+            <span>AAAAAAAAAAAAAApple</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/code.jpg" alt="Subscription" class="icon">
+            <span>Гоша Дутарь</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/html.png" alt="Subscription" class="icon">
+            <span>HTML Учитель</span>
+          </a>
+        </div>
+      </div>
+      <div class="primary">
+        <div class="item">
+          <a href="index.html">
+            <img src="images/icons/settings.svg" alt="Settings" class="icon">
+            <span>Настройки</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/icons/exclamation.svg" alt="Complaints" class="icon">
+            <span>Жалобы</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="index.html">
+            <img src="images/icons/question.svg" alt="About" class="icon">
+            <span>Справка</span>
+          </a>
+        </div>
+      </div>
+      <div class="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum dolores assumenda adipisci culpa delectus, explicabo minus dolor. Eius, numquam? Quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolore maiores dicta fuga delectus cum, illum debitis sit aliquam. Incidunt debitis quis cum hic fuga nisi dolorem. Ex, ratione necessitatibus.</div>
+    </div>
+  </nav>
+  <header>
+    <nav class="start">
+      <img src="images/icons/menu.svg" alt="Menu" class="menu-icon">
+      <a href="index.html"><img src="images/youtube_logo.png" alt="Logo" class="main-logo"></a>
+    </nav>
+    <nav class="center">
+      <form action="POST">
+        <div class="search-input">
+          <input type="text" placeholder="Введите запрос">
+          <img src="images/icons/keyboard.svg" alt="Keyboard">
+        </div>
+        <button type="submit">
+          <img src="images/icons/search.svg" alt="Search">
+        </button>
+        <img src="images/icons/microphone.svg" alt="Voice Input">
+      </form>
+    </nav>
+    <nav class="end">
+      <div class="img-container">
+      <img src="images/icons/make_video.svg" alt="Make Video" class="make-video-icon">
+      <img src="images/icons/bells.svg" alt="Announcements">
+      <img src="images/elon_musk.jpg" alt="Account Profile" class="account-icon">
+    </div>
+    </nav>
+  </header>
+  <div class="wrapper">
+    <main>
+      <div class="primary">
+        <!-- <div class="video_container">
+          <iframe src="https://www.youtube.com/embed/cFRfpa-5xOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div> -->
+        <video controls>
+          <source src="video/main.webm" type="video/webm">
+          <source src="video/main.mp4" type="video/mp4">
+        </video>
+        <div class="main-text">
+          <a href="">Красивые животные! Смотреть онлайн без регистрации и SMS!</a>
+          <h1><strong>Ух ты! Красивый журавль! Смотреть онлайн без регистрации и SMS! 
+            Супер Пупер Мега Дупер Ультра длинное название этого видео!</strong></h1>
+        </div>
+        <div class="information">
+          <div class="channel">
+            <img src="images/elon_musk.jpg" alt="Channel Profile">
+            <h3><strong>100% Не Фейк Илон Маск</strong></h3>
+            <span class="secondary-text">100 тыс. подписчиков</span>
+            <button>Подписаться</button>
+          </div>
+          <div class="video">
+            <div class="critics">
+              <button class="likes">
+                <img src="images/icons/like.svg" alt="Like">
+                <span>20,5 тыс</span>
+              </button>
+              <button class="dislikes">
+                <img src="images/icons/dislike.svg" alt="Dislike">
+              </button>
+            </div>
+            <button class="share">
+              <img src="images/icons/share.svg" alt="Share">
+                <span>Поделиться</span>
+            </button>
+            <button class="more">
+              <img src="images/icons/more-horizontal.svg" alt="More">
+            </button>
+          </div>
+        </div>
+        <div class="description" style="cursor: pointer; background-color: #393939;">
+          <div class="date">159 979 просмотров&nbsp;&nbsp;9 апр. 2022 г.</div>
+          <span style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ipsa maiores a labore dolores voluptate, deserunt culpa nobis magnam enim non qui quo iure laborum exercitationem laboriosam consequuntur eum sunt. Harum quod, quisquam impedit beatae itaque dolor minima error, amet unde repellendus placeat! Sunt non quidem, quia ipsam suscipit exercitationem!<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ipsa maiores a labore dolores voluptate, deserunt culpa nobis magnam enim non qui quo iure laborum exercitationem laboriosam consequuntur eum sunt. Harum quod, quisquam impedit beatae itaque dolor minima error, amet unde repellendus placeat! Sunt non quidem, quia ipsam suscipit exercitationem!
+          <br><span class="collapse">Свернуть</span>
+          </span>
+        </div>
+        <div class="comments">
+          <div class="count">n комментариев</div>
+          <form class="enter" action="POST">
+            <img src="images/elon_musk.jpg" alt="Profile Image" class="account-icon">
+            <input placeholder="Введите комментарий">
+          </form>
+        </div>
+      </div>
+      <div class="secondary">
+        <ul class="other-videos">
+          <li>
+            <button>
+              <img src="images/elon_musk.jpg" style="display: auto">
+              <video muted autoplay loop style="display: none">
+                <source src="video/main.webm" type="video/webm">
+                <source src="video/main.mp4" type="video/mp4">
+              </video>
+              <h2>Ух ты! Я нашел реального Илона Маска!</h2>
+              <div class="secondary-text">Слежка за Илоном Маском!</div>
+              <div class="secondary-text">20 тыс. просмотров&nbsp;&#8226;&nbsp;1 год назад</div>
+              <div class="new">Новинка</div>
+            </button>
+          </li>
+        </ul>
+        <div class="more">
+          <img src="images/icons/down-arrow.svg" alt="More" class="icon">
+          <span>Больше</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="scripts/scripts.js"></script>
+</body>
+
+</html>

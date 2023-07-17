@@ -1,0 +1,575 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  background-color: #111;
+  height: 57px;
+}
+header .start {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+header .start a {
+  display: grid;
+}
+header .start a .main-logo {
+  align-self: center;
+  height: 20px;
+}
+header .start .menu-icon {
+  width: 37px;
+  height: 37px;
+  padding: 7px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30%;
+  margin: 0 18px;
+}
+header .start .menu-icon:hover {
+  background-color: #393939;
+  cursor: pointer;
+}
+header .center {
+  padding: 10px;
+  min-height: 20px;
+  flex: 2.2;
+}
+@media screen and (min-width: 0) {
+  header .center {
+    display: none;
+  }
+}
+@media screen and (min-width: 706px) {
+  header .center {
+    display: block;
+  }
+}
+header .center form {
+  display: flex;
+}
+header .center form .search-input {
+  display: flex;
+  flex: 11;
+  border: 1px solid #808080;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 17px 0 0 17px;
+  align-self: center;
+  flex-direction: row;
+}
+header .center form .search-input input {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  margin: 5px 17px;
+  border: none;
+}
+header .center form .search-input img {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+  align-self: center;
+  cursor: pointer;
+}
+header .center form button {
+  display: flex;
+  background-color: #2a2a2a;
+  flex: 1;
+  border: 1px solid #808080;
+  border-radius: 0 17px 17px 0;
+  align-items: center;
+  justify-content: center;
+}
+header .center form button img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+header .center form > img {
+  width: 37px;
+  height: 37px;
+  padding: 3px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: #252525;
+}
+header .center form > img:hover {
+  background-color: #393939;
+  cursor: pointer;
+}
+header .end {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: end;
+}
+header .end .img-container {
+  display: flex;
+  flex-direction: row;
+  align-self: end;
+}
+header .end .img-container img {
+  width: 37px;
+  height: 37px;
+  padding: 7px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  align-self: center;
+  margin-right: 20px;
+}
+header .end .img-container img.make-video-icon {
+  padding: 5px;
+}
+header .end .img-container img.account-icon {
+  width: 37px;
+  height: 37px;
+  padding: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+header .end .img-container img:hover {
+  background-color: #393939;
+  cursor: pointer;
+}
+
+.dark {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 260px;
+  height: 100%;
+  background-color: #121212;
+  z-index: 200;
+  transition: 200ms ease-in;
+}
+.nav-menu .lorem {
+  margin: 20px 10px;
+}
+.nav-menu .head {
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: #121212;
+}
+.nav-menu .head a .main-logo {
+  height: 20px;
+  margin: 10px 0 0 0;
+}
+.nav-menu .head .menu-icon {
+  width: 37px;
+  height: 37px;
+  padding: 7px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20%;
+  margin: 2px 18px;
+}
+.nav-menu .head .menu-icon:hover {
+  cursor: pointer;
+}
+.nav-menu .main::-webkit-scrollbar-track {
+  background-color: #121212;
+}
+.nav-menu .main::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #5e5e5e;
+}
+.nav-menu .main::-webkit-scrollbar {
+  width: 0;
+}
+.nav-menu .main {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  overflow: auto;
+  scrollbar-width: none;
+  padding-right: 5px;
+}
+.nav-menu .main .primary, .nav-menu .main .subscriptions {
+  flex: 4;
+  padding-bottom: 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid #5e5e5e;
+}
+.nav-menu .main .primary > span, .nav-menu .main .subscriptions > span {
+  font-size: 1.1em;
+  margin-left: 15px;
+}
+.nav-menu .main .primary .item, .nav-menu .main .subscriptions .item {
+  padding: 10px 11px;
+}
+.nav-menu .main .primary .item span, .nav-menu .main .subscriptions .item span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav-menu .main .primary .item a, .nav-menu .main .subscriptions .item a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 0.9em;
+  align-items: center;
+}
+.nav-menu .main .primary .item:hover, .nav-menu .main .subscriptions .item:hover {
+  border-radius: 10px;
+  background-color: #393939;
+  cursor: pointer;
+}
+.nav-menu .main .primary {
+  margin: 10px 10px 0 0;
+}
+.nav-menu .main .primary .icon {
+  width: 21px;
+  height: 21px;
+  margin: 0 23px 0 4px;
+}
+.nav-menu .main .subscriptions {
+  padding: 15px 0 10px 0;
+}
+.nav-menu .main .subscriptions .item:nth-child(2) {
+  margin-top: 7px;
+}
+.nav-menu .main .subscriptions .item {
+  padding: 8px 35px 8px 11px;
+}
+.nav-menu .main .subscriptions .icon {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin: 0 17px 0 4px;
+}
+
+.wrapper {
+  min-height: 100%;
+  padding: 29px 4.6%;
+}
+.wrapper span {
+  color: #fff;
+}
+.wrapper h1 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.wrapper h2 {
+  font-size: 1em;
+  font-weight: 600;
+}
+.wrapper h3 {
+  font-size: 1em;
+  font-weight: 500;
+}
+.wrapper a {
+  font-size: 0.8em;
+  color: deepskyblue;
+}
+.wrapper .secondary-text {
+  color: #808080;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.wrapper main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.wrapper main .primary {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper main .primary video {
+  width: 100%;
+}
+.wrapper main .primary .video_container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.wrapper main .primary .video_container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.wrapper main .primary .main-text {
+  width: 100%;
+  margin-top: 7px;
+}
+.wrapper main .primary .main-text h1 {
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.wrapper main .primary .information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 9px;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.wrapper main .primary .information > * {
+  margin-bottom: 10px;
+}
+.wrapper main .primary .information .channel {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 10px;
+}
+.wrapper main .primary .information .channel h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0;
+  cursor: pointer;
+}
+.wrapper main .primary .information .channel img {
+  grid-row: span 2;
+  width: 37px;
+  height: 37px;
+  padding: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.wrapper main .primary .information .channel button {
+  grid-row: span 2/3;
+  grid-column: 3/4;
+  margin-left: 15px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 8px 15px;
+  align-self: center;
+}
+.wrapper main .primary .information .video {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+}
+.wrapper main .primary .information .video > * {
+  margin-left: 10px;
+}
+.wrapper main .primary .information .video span {
+  margin-left: 10px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+.wrapper main .primary .information .video img {
+  width: 22px;
+  height: 22px;
+}
+.wrapper main .primary .information .video button {
+  background-color: #393939;
+  padding: 0 10px;
+  height: 89%;
+}
+.wrapper main .primary .information .video button:hover {
+  background-color: #5e5e5e;
+}
+.wrapper main .primary .information .video .critics {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  height: 100%;
+  margin-left: 0;
+}
+.wrapper main .primary .information .video .critics .likes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 17px 0 0 17px;
+  border-right: 1px solid #5e5e5e;
+  height: 89%;
+}
+.wrapper main .primary .information .video .critics .dislikes {
+  border-radius: 0 17px 17px 0;
+  height: 89%;
+}
+.wrapper main .primary .information .video .share {
+  display: flex;
+  flex-direction: row;
+  border-radius: 17px;
+  align-items: center;
+}
+.wrapper main .primary .information .video .more {
+  border-radius: 50%;
+  height: 89%;
+  padding: 7px;
+}
+.wrapper main .primary .description {
+  width: 100%;
+  border-radius: 17px;
+  background-color: #393939;
+  padding: 12px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+.wrapper main .primary .description:hover {
+  background-color: #5e5e5e;
+}
+.wrapper main .primary .description br {
+  margin-bottom: 15px;
+}
+.wrapper main .primary .description .date {
+  font-weight: bold;
+}
+.wrapper main .primary .description .collapse {
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.wrapper main .primary .comments {
+  margin-top: 20px;
+}
+.wrapper main .primary .comments .count {
+  font-size: 1.1em;
+}
+.wrapper main .primary .comments .enter {
+  display: grid;
+}
+.wrapper main .primary .comments .enter .account-icon {
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.wrapper main .primary .comments .enter input {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #5e5e5e;
+  font-size: 0.98em;
+}
+.wrapper main .secondary {
+  flex: 1;
+}
+@media screen and (min-width: 0) {
+  .wrapper main .secondary {
+    display: none;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .wrapper main .secondary {
+    display: block;
+  }
+}
+.wrapper main .secondary .other-videos {
+  margin-top: 0;
+}
+.wrapper main .secondary .other-videos li {
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 8px;
+}
+.wrapper main .secondary .other-videos li button {
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 180px 2fr;
+  grid-template-rows: repeat(4, -webkit-fit-content);
+  grid-template-rows: repeat(4, fit-content);
+  -moz-column-gap: 3%;
+       column-gap: 3%;
+}
+.wrapper main .secondary .other-videos li button .secondary-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrapper main .secondary .other-videos li button h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.wrapper main .secondary .other-videos li button .new {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #b5b5b5;
+  background-color: #464646;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 4px;
+  padding: 0 3px;
+  text-align: center;
+}
+.wrapper main .secondary .other-videos li button > * {
+  padding: 0;
+}
+.wrapper main .secondary .other-videos li img, .wrapper main .secondary .other-videos li video {
+  justify-self: stretch;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 115px;
+  grid-row: 1/5;
+  border-radius: 17px;
+}
+.wrapper main .secondary .more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 7px;
+  margin-left: 10%;
+  background-color: #393939;
+  border-radius: 17px;
+  font-weight: 600;
+}
+.wrapper main .secondary .more:hover {
+  background-color: #5e5e5e;
+}
+.wrapper main .secondary .more .icon {
+  width: 21px;
+  height: 21px;
+  padding: 1px;
+  margin-right: 10px;
+}/*# sourceMappingURL=style.css.map */

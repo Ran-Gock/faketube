@@ -1,0 +1,580 @@
+$search_border_radius: 17px;
+$hover_color: #393939;
+$main_color: #fff;
+$information_hover_color: #5e5e5e;
+
+@mixin account_profile_image($padding: 0, $width: 37px, $border_rad: 50%) {
+    width: $width;
+    height: $width;
+    padding: $padding;
+    object-fit: cover;
+    border-radius: $border_rad;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+    color: $main_color;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    background-color: #111;
+    height: 57px;
+
+    .start {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        
+        a {
+            display: grid;
+            .main-logo {
+                align-self: center;
+                height: 20px;
+            }
+        }
+        .menu-icon {
+            @include account_profile_image(7px, 37px, 30%);
+            margin: 0 18px;
+
+            &:hover {
+                background-color: $hover_color;
+                cursor: pointer;
+            }
+        }
+    }
+    .center {
+        padding: 10px;
+        min-height: 20px;
+        flex: 2.2;
+
+        @media screen and (min-width: 0) {
+            display: none;
+        }
+        @media screen and (min-width: 706px) {
+            display: block;
+        }
+
+        form {
+            display: flex;
+            .search-input {
+                display: flex;
+                flex: 11;
+                border: 1px solid #808080;
+                background-color: rgba($color: #000, $alpha: 0);
+                border-radius: $search_border_radius 0 0 $search_border_radius;
+                align-self: center;
+                flex-direction: row;
+                
+                input {
+                    color: $main_color;
+                    background-color: rgba($color: #000000, $alpha: 0);
+                    width: 100%;
+                    margin: 5px 17px;
+                    border: none;
+                }
+                img {
+                    width: 25px;
+                    height: 25px;
+                    margin: 0 10px;
+                    align-self: center;
+                    cursor: pointer;
+                }
+            }
+            button {
+                display: flex;
+                background-color: #2a2a2a;
+                flex: 1;
+                border: 1px solid #808080;
+                border-radius: 0 $search_border_radius $search_border_radius 0;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                }
+            }
+            & > img {
+                @include account_profile_image(3px);
+                margin-left: 10px;
+                background-color: #252525;
+
+                &:hover {
+                    background-color: $hover_color;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .end {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        justify-content: end;
+
+        .img-container {
+            display: flex;
+            flex-direction: row;
+            align-self: end;
+
+            img {
+                @include account_profile_image(7px);
+                align-self: center;
+                margin-right: 20px;
+        
+                &.make-video-icon {
+                    padding: 5px;
+                }
+                &.account-icon {
+                    @include account_profile_image();
+                    margin-right: 25px;
+                }
+                &:hover {
+                    background-color: $hover_color;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.dark {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, 0.5);
+    z-index: 200;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    width: 260px;
+    height: 100%;
+    background-color: #121212;
+    z-index: 200;
+
+    transition: 200ms ease-in;
+
+    .lorem {
+        margin: 20px 10px;
+    }
+
+    .head {
+        display: flex;
+        flex-direction: row;
+        padding: 8px 0;
+        position: sticky;
+        top: 0px;
+        background-color: #121212;
+        
+        a {
+            .main-logo {
+                height: 20px;
+                margin: 10px 0 0 0;
+            }
+        }
+        .menu-icon {
+            @include account_profile_image(7px, 37px, 20%);
+            margin: 2px 18px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .main::-webkit-scrollbar-track {
+        background-color: #121212;
+    } 
+    .main::-webkit-scrollbar-thumb { 
+        border-radius: 5px;
+        background-color: $information_hover_color;
+    } 
+    .main::-webkit-scrollbar { 
+        width: 0;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        overflow: auto;
+        scrollbar-width: none;
+        padding-right: 5px;
+
+        .primary, .subscriptions {
+            flex: 4;
+            padding-bottom: 10px;
+            margin-right: 10px;
+            border-bottom: 1px solid $information_hover_color;
+
+            > span {
+                font-size: 1.1em;
+                margin-left: 15px;
+            }
+            .item {
+                padding: 10px 11px;
+
+                span {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: #fff;
+                    font-size: 0.9em;
+                    align-items: center;
+                }
+                &:hover {
+                    border-radius: 10px;
+                    background-color: $hover_color;
+                    cursor: pointer;
+                }
+            }
+        }
+        .primary {
+            margin: 10px 10px 0 0;
+            .icon {
+                width: 21px;
+                height: 21px;
+                margin: 0 23px 0 4px;
+            }
+        }
+        .subscriptions {
+            padding: 15px 0 10px 0;
+
+            .item:nth-child(2) {
+                margin-top: 7px;
+            }
+            .item {
+                padding: 8px 35px 8px 11px;
+            }
+            .icon {
+                @include account_profile_image(0, 25px);
+                margin: 0 17px 0 4px;
+            }
+        }
+    }
+}
+
+.wrapper {
+    min-height: 100%;
+    padding: 29px 4.6%;
+
+    span {
+        color: $main_color;
+    }
+    h1 {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+    h2 {
+        font-size: 1em;
+        font-weight: 600;
+    }
+    h3 {
+        font-size: 1em;
+        font-weight: 500;
+    }
+    a {
+        font-size: 0.8em;
+        color: deepskyblue;
+    }
+    .secondary-text {
+        color: #808080;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .primary {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+
+            video {
+                width: 100%;
+            }
+
+            .video_container {
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%;
+
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .main-text {
+                width: 100%;
+                margin-top: 7px;
+
+                h1 {
+                    -webkit-line-clamp: 2;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+            .information {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 9px;
+                flex-wrap: wrap;
+                align-content: space-between;
+
+                & > * {
+                    margin-bottom: 10px;
+                }
+
+                .channel {
+                    display: grid;
+                    grid-template-rows: auto auto;
+                    grid-template-columns: auto auto auto;
+                    width: fit-content;
+                    margin-right: 10px;
+
+                    h3 {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        padding: 0;
+                        cursor: pointer;
+                    }
+                    img {
+                        grid-row: span 2;
+                        @include account_profile_image();
+                        margin-right: 10px;
+                    }
+                    button {
+                        grid-row: span 2/3;
+                        grid-column: 3/4;
+                        margin-left: 15px;
+                        height: max-content;
+                        font-size: 0.85rem;
+                        font-weight: 600;
+                        border-radius: 30px;
+                        padding: 8px 15px;
+                        align-self: center;
+                    }
+                }
+                .video {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    height: 40px;
+
+                    & > * {
+                        margin-left: 10px;
+                    }
+                    span {
+                        margin-left: 10px;
+                        font-size: 0.8em;
+                        font-weight: 600;
+                    }
+                    img {
+                        width: 22px;
+                        height: 22px;
+                    }
+                    button {
+                        background-color: $hover_color;
+                        padding: 0 10px;
+                        height: 89%;
+                    }
+                    button:hover {
+                        background-color: $information_hover_color;
+                    }
+                    .critics {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        background-color: rgba(#000, 0);
+                        height: 100%;
+                        margin-left: 0;
+
+                        .likes {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            border-radius: $search_border_radius 0 0 $search_border_radius;
+                            border-right: 1px solid $information_hover_color;
+                            height: 89%;
+                        }
+                        .dislikes {
+                            border-radius: 0 $search_border_radius $search_border_radius 0;
+                            height: 89%;
+                        }
+                    }
+                    .share {
+                        display: flex;
+                        flex-direction: row;
+                        border-radius: $search_border_radius;
+                        align-items: center;
+                    }
+                    .more {
+                        border-radius: 50%;
+                        height: 89%;
+                        padding: 7px;
+                    }
+                }
+            }
+            .description {
+                width: 100%;
+                border-radius: $search_border_radius;
+                background-color: $hover_color;
+                padding: 12px;
+                font-size: 0.9em;
+                font-weight: 500;
+
+                &:hover {
+                    background-color: $information_hover_color;
+                }
+                
+                br {
+                    margin-bottom: 15px;
+                }
+                .date {
+                    font-weight: bold;
+                }
+                .collapse {
+                    font-weight: 600;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+            .comments {
+                margin-top: 20px;
+
+                * {
+                    //border: 1px dashed white;
+                }
+                .count {
+                    font-size: 1.1em;
+                }
+                .enter {
+                    display: grid;
+
+                    .account-icon {
+                        @include account_profile_image(0, 45px);
+                    }
+                    input {
+                        color: $main_color;
+                        background-color: rgba($color: #000000, $alpha: 0);
+                        border: none;
+                        padding-bottom: 4px;
+                        border-bottom: 2px solid $information_hover_color;
+                        font-size: 0.98em;
+                    }
+                }
+            }
+        }
+        
+        .secondary {
+            flex: 1;
+            @media screen and (min-width: 0) {
+                display: none;
+            }
+            @media screen and (min-width: 1170px) {
+                display: block;
+            }
+
+            .other-videos {
+                margin-top: 0;
+
+                li {
+                    background-color: rgba(#000, 0);
+                    margin-bottom: 8px;
+
+                    button {
+                        background-color: rgba(#000, 0);
+                        color: $main_color;
+                        text-align: left;
+
+                        display: grid;
+                        grid-template-columns: 180px 2fr;
+                        grid-template-rows: repeat(4, fit-content);
+                        column-gap: 3%;
+
+                        .secondary-text {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        h2 {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+                        .new {
+                            font-size: 0.75rem;
+                            font-weight: 600;
+                            color: #b5b5b5;
+                            background-color: #464646;
+                            width: fit-content;
+                            border-radius: 4px;
+                            padding: 0 3px;
+                            text-align: center;
+                        }
+                        & > * {
+                            padding: 0;
+                        }
+                    }
+                    img, video {
+                        justify-self: stretch;
+                        object-fit: cover;
+                        height: 115px;
+                        grid-row: 1/5;
+                        border-radius: $search_border_radius;
+                    }
+                }
+            }
+            .more {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                padding: 7px;
+                margin-left: 10%;
+                background-color: $hover_color;
+                border-radius: $search_border_radius;
+                font-weight: 600;
+
+                &:hover {
+                    background-color: $information_hover_color;
+                }
+                .icon {
+                    width: 21px;
+                    height: 21px;
+                    padding: 1px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
